@@ -1,0 +1,12 @@
+{
+  "author": "otto-hung",
+  "description": "This is a utility module",
+  "license": "MIT",
+  "main": "dist/utils.js",
+  "name": "utils",
+  "scripts": {
+    "build": "tsc"
+  },
+  "types": "dist/utils.d.ts",
+  "version": "0.1.0"  
+}
