@@ -1,0 +1,12 @@
+{
+  "author": "otto-hung",  
+  "description": "This is a endpoint example",  
+  "license": "MIT",
+  "main": "./dist/server.js",
+  "name": "servlet",
+  "scripts": {
+    "build": "tsc",
+    "serve": "node ./dist/server.js"
+  },
+  "version": "0.1.0"
+}
