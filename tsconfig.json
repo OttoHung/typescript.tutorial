@@ -30,10 +30,10 @@
     "baseUrl": ".",                                  /* Specify the base directory to resolve non-relative module names. */
     /* Specify a set of entries that re-map imports to additional lookup locations. */
     "paths": {
-      "@endpoint/*": ["workspaces/endpoint/dist/*"],
-      "@interview/*": ["workspaces/interview/dist/*"],
-      "@servlet/*": ["workspaces/servlet/dist/*"],
-      "@utils/*": ["workspaces/utils/dist/*"]
+      "@endpoint/*": ["workspaces/endpoint/src/*"],
+      "@interview/*": ["workspaces/interview/src/*"],
+      "@servlet/*": ["workspaces/servlet/src/*"],
+      "@utils/*": ["workspaces/utils/src/*"]
     },
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
@@ -103,7 +103,5 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  },
-  "include": ["**/*.d.ts", "**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "./lib", "**/node_modules", "scripts", "**/dist"],
+  }
 }
