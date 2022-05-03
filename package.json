@@ -20,18 +20,20 @@
   "name": "demo",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "yarn workspaces run build",
     "clean": "ts-node -r tsconfig-paths/register scripts/clean.ts",
     "clean:install": "CLEAN_MODULES=true ts-node -r tsconfig-paths/register scripts/clean.ts",
     "endpoint": "yarn workspace endpoint",
     "fix": "eslint --fix",
     "interview": "yarn workspace interview",
     "lint": "eslint",
+    "servlet": "yarn workspace servlet",
     "utils": "yarn workspace utils"
   },
   "workspaces":[
     "workspaces/endpoint",
     "workspaces/interview",
+    "workspaces/servlet",
     "workspaces/tutorials",
     "workspaces/utils"
   ],
