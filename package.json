@@ -21,8 +21,8 @@
   "private": true,
   "scripts": {
     "build": "yarn workspaces run build",
-    "clean": "ts-node -r tsconfig-paths/register scripts/clean.ts",
-    "clean:install": "CLEAN_MODULES=true ts-node -r tsconfig-paths/register scripts/clean.ts",
+    "clean": "ts-node -r tsconfig-paths/register scripts/clean.ts *.tsbuildinfo workspaces/**/lib workspaces/**/dist",
+    "clean:install": "ts-node -r tsconfig-paths/register scripts/clean.ts node_modules",
     "endpoint": "yarn workspace endpoint",
     "fix": "eslint --fix",
     "interview": "yarn workspace interview",
