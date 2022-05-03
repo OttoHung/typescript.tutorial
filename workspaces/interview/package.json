@@ -1,0 +1,11 @@
+{
+  "author": "OttoHung",
+  "description": "This is an interview app",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "name": "interview",
+  "scripts": {
+    "build": "tsc"
+  },
+  "version": "0.1.0"
+}
