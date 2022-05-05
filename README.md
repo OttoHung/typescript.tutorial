@@ -9,6 +9,7 @@
 - [How to write Typescript](#how-to-write-typescript)
   - [Command line prompt arguments](#command-line-prompt-arguments)
   - [How to work with Express](#how-to-work-with-express)
+  - [Test source code by Jest](#test-source-code-by-jest)
 - [ESLint Integration](#eslint-integration)
 - [Swagger Integration](#swagger-integration)
 - [Application Deployment on Kubernetes](#application-deployment-on-kubernetes)
@@ -35,6 +36,10 @@
 ## Command line prompt arguments
 
 ## How to work with Express
+
+## Test source code by Jest
+Note: jest ts-jest and @types/jest
+ts-jest configinit
 
 
 # ESLint Integration
