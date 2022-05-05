@@ -5,7 +5,8 @@
   "main": "dist/utils.js",
   "name": "utils",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "ts-node ../../scripts/noloop.ts"
   },
   "types": "dist/utils.d.ts",
   "version": "0.1.0"  

@@ -1,11 +1,22 @@
 {
   "author": "OttoHung",
+  "dependencies": {
+    "http-server": "latest"
+  },
+  "devDependencies": {
+    "copyfiles": "latest",
+    "jest": "^26.0.0",
+    "ts-jest": "^26.0.0",
+    "@types/jest": "^26.0.0"
+  },
   "description": "This is an interview app",
   "license": "MIT",
   "main": "./dist/index.js",
   "name": "interview",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "linked-list": "ts-node ./src/linked_list.ts",
+    "test": "jest"
   },
   "version": "0.1.0"
 }

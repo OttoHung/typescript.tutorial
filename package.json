@@ -1,16 +1,16 @@
 {  
-  "author": "otto-hung",
+  "author": "OttoHung",
   "description": "This is a demo project",
   "dependencies": {
-    "fs": "latest",
-    "ts-node": "latest",
-    "typescript": "latest"
+    "fs": "latest"
   },
   "devDependencies": {
     "eslint": "latest",
     "eslint-config-standard": "latest",
     "eslint-plugin-react": "latest",
     "tsconfig-paths": "latest",
+    "ts-node": "latest",
+    "typescript": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "@types/node": "latest"
@@ -21,13 +21,14 @@
   "private": true,
   "scripts": {
     "build": "yarn workspaces run build",
-    "clean": "ts-node -r tsconfig-paths/register scripts/clean.ts *.tsbuildinfo workspaces/**/lib workspaces/**/dist",
+    "clean": "ts-node -r tsconfig-paths/register scripts/clean.ts *.tsbuildinfo workspaces/**/lib workspaces/**/dist yarn-error.log",
     "clean:install": "ts-node -r tsconfig-paths/register scripts/clean.ts node_modules",
     "endpoint": "yarn workspace endpoint",
     "fix": "eslint --fix",
     "interview": "yarn workspace interview",
     "lint": "eslint",
     "servlet": "yarn workspace servlet",
+    "test": "yarn workspaces run test",
     "utils": "yarn workspace utils"
   },
   "workspaces":[

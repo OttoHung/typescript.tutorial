@@ -6,7 +6,8 @@
   "name": "servlet",
   "scripts": {
     "build": "tsc",
-    "serve": "node ./dist/server.js"
+    "serve": "node ./dist/server.js",
+    "test": "ts-node ../../scripts/noloop.ts"
   },
   "version": "0.1.0"
 }
