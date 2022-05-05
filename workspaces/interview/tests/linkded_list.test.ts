@@ -1,4 +1,4 @@
-import { compareNodes, deleteNode, fromString, insertNode, ListNode } from "../src/linked_list"
+import { compareNodes, deleteNode, findNode, fromString, insertNode, ListNode } from "../src/linked_list"
 
 describe("Insert Nodes individually", () => {
     it("should create a unsorted linked list and return an object",  async () => {
@@ -249,5 +249,80 @@ describe("Compare two strings", () => {
         const list1: ListNode = fromString("geeksb")
         const list2: ListNode = fromString("geeksbcdee")
         expect(compareNodes(list1, list2)).toEqual(-1)
+    })
+})
+
+describe("Search a node", () => {
+    it("should delete a node from a unsorted linked list and return an object",  async () => {
+        let root: ListNode
+        root = insertNode(1, root)
+        root = insertNode(2, root)
+        root = insertNode(3, root)
+        root = insertNode(10, root)
+        root = insertNode(4, root)
+        root = insertNode(5, root)
+
+        expect(root).toEqual({
+            data: 1,
+            next:{
+                data: 2,
+                next: {
+                    data: 3,
+                    next: {
+                        data: 10,
+                        next: {
+                            data: 4,
+                            next: {
+                                data: 5
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
+        const target = findNode(root, 10)
+        expect(target).toEqual({
+            data: 10,
+            next:{
+                data: 4,
+                next: {
+                    data: 5,
+                }
+            }
+        })
+    })
+
+    it("should delete a node from a sorted linked list and return an object",  async () => {
+        let root: ListNode
+        root = insertNode(1, root, true)
+        root = insertNode(2, root, true)
+        root = insertNode(3, root, true)
+        root = insertNode(10, root, true)
+        root = insertNode(4, root, true)
+        root = insertNode(5, root, true)
+        expect(root).toEqual({
+            data: 1,
+            next:{
+                data: 2,
+                next: {
+                    data: 3,
+                    next: {
+                        data: 4,
+                        next: {
+                            data: 5,
+                            next: {
+                                data: 10
+                            }
+                        }
+                    }
+                }
+            }
+        })
+
+        const target = findNode(root, 10)
+        expect(target).toEqual({
+            data: 10,
+        })
     })
 })

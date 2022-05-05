@@ -3,6 +3,19 @@ export interface ListNode {
     next?: ListNode
 }
 
+export const findNode = (head: ListNode, data: any) => {
+    if (head === undefined) {
+        return undefined
+    }
+
+    let current = head
+    while (current.data !== data){
+        current = current.next
+    }
+
+    return current
+}
+
 export const insertNode = (data: any, head?: ListNode, isSorted: boolean = false): ListNode => {
     if (head === undefined || (isSorted && data <= head.data)) {
         head = {
