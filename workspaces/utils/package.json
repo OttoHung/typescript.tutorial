@@ -3,7 +3,11 @@
   "description": "This is a utility module",
   "license": "MIT",
   "main": "dist/utils.js",
-  "name": "utils",
+  "name": "@ottohung/utils",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:OttoHung/typescript.tutorial.git"
+  },
   "scripts": {
     "build": "tsc",
     "test": "ts-node ../../scripts/noloop.ts"
