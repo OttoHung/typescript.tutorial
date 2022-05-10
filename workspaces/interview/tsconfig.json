@@ -100,5 +100,5 @@
   },
   "extends": "../../tsconfig.json",
   "include": ["src"],
-  "exclude": ["node_modules", "src/**/*.spec.ts"]
+  "exclude": ["tests", "node_modules", "src/**/*.spec.ts"]
 }
