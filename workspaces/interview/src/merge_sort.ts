@@ -36,3 +36,39 @@ export const mergeList = (list1: any[], list2: any[]): any[] => {
     
     return result
 }
+
+export const efficientSort = (list: any[], start:number, end: number) => {
+    if (start >= end) {
+        return
+    }
+
+    const mid = Math.floor((start+end) / 2)
+    efficientSort(list, start, mid)
+    efficientSort(list, mid+1, end)
+
+    efficientMerge(list, start, mid, end)
+}
+
+export const efficientMerge = (list: any[], start: number, mid: number, end: number): any[] => {
+    let result: any[] = []
+
+    let lp = start
+    let rp = mid + 1
+    for (let i = start ; i <= end ; i++) {
+        if (lp > mid) {
+            result.push(list[rp++])
+        } else if (rp > end) {
+            result.push(list[lp++])
+        } else if (list[lp] < list[rp]) {
+            result.push(list[lp++])
+        } else {
+            result.push(list[rp++])
+        }
+    }
+
+    for (let i = 0 ; i < result.length ; i++) {
+        list[start++] = result[i]
+    }
+
+    return result
+}
