@@ -1,4 +1,4 @@
-import { Graph, GraphNode } from "./graph"
+import { Graph, GraphArray, GraphNode } from "./graph"
 
 const findNode = (graph: Graph, node: GraphNode): GraphNode|undefined => {
     const currentNode = graph.sourceNode
@@ -57,7 +57,46 @@ export const breadthFirstSearch = (graph: Graph, sourceNode: GraphNode) => {
     }
 }
 
-export const breadthFirstSearchArray = (graph: {[key: number]: number[]}, source: number): number[] => {
+export const seekLevels = (graph: Graph, sourceNode: any): number[] => {
+    const layers: number[] = []
+
+    const searchQueue = []
+    const source = findNode(graph, sourceNode)
+    if (source === undefined) {
+        return
+    }
+
+    searchQueue.push(source)
+    source.visited = true
+    layers[source.id] = 0
+
+    while (searchQueue.length > 0) {
+        const vertex = searchQueue.shift()
+
+        const node = findNode(graph, vertex)
+        if (node === undefined) {
+            continue
+        }
+
+        if (node.neighbours === undefined) {
+            continue
+        }
+
+        for (let i = 0 ; i < node.neighbours.length ; i ++) {
+            if (node.neighbours[i].visited) {
+                continue
+            }
+
+            searchQueue.push(node.neighbours[i])
+            node.neighbours[i].visited = true
+            layers[node.neighbours[i].id]=layers[node.id] + 1
+        }
+    }
+    
+    return layers
+}
+
+export const breadthFirstSearchArray = (graph: GraphArray, source: number): number[] => {
     const queue = []
     const visited: number[] = []
     queue.push(source)
@@ -79,9 +118,29 @@ export const breadthFirstSearchArray = (graph: {[key: number]: number[]}, source
     return visited
 }
 
-export const seekLevels = (graph: GraphNode[], sourceNode: any): number[] => {
-    const layers: number[] = []
+export const seekLevelsArray = (graph: GraphArray, sourceNode: any): {[key: number]: number} => {
+    const visited: {[key: number]: boolean} = []
+    const queue: number[] = []
+    const levels: {[key: number]: number} = []
 
-    
-    return layers
+    queue.push(sourceNode)
+    visited[sourceNode] = true
+    levels[sourceNode] = 0
+
+    while (queue.length > 0) {
+        const vertex = queue.shift()
+        
+        for (let i = 0 ; i < graph[vertex].length ; i++) {
+            const neighbour = graph[vertex][i]
+            if (visited[neighbour]) {
+                continue
+            }
+
+            levels[neighbour] = levels[vertex] + 1
+            visited[neighbour] = true
+            queue.push(neighbour)
+        }
+    }
+
+    return levels
 }

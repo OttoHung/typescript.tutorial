@@ -7,3 +7,7 @@ export interface GraphNode {
 export interface Graph {
     sourceNode: GraphNode
 }
+
+export interface GraphArray {
+    [key: number]: number[]
+}
