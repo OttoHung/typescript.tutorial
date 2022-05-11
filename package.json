@@ -29,6 +29,7 @@
     "lint": "eslint",
     "servlet": "yarn workspace servlet",
     "test": "yarn workspaces run test",
+    "test:time": "yarn workspaces run test:time",
     "utils": "yarn workspace utils"
   },
   "workspaces":[

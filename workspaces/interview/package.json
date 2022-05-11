@@ -16,7 +16,8 @@
   "scripts": {
     "build": "tsc",
     "linked-list": "ts-node ./src/linked_list.ts",
-    "test": "jest"
+    "test": "jest",
+    "test:time": "jest --verbose"
   },
   "version": "0.1.0"
 }
