@@ -99,6 +99,6 @@
     // "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "extends": "../../tsconfig.json",
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["tests", "node_modules", "src/**/*.spec.ts"]
 }
