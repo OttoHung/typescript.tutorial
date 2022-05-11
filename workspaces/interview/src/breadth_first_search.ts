@@ -96,7 +96,7 @@ export const seekLevels = (graph: Graph, sourceNode: any): number[] => {
     return layers
 }
 
-export const breadthFirstSearchArray = (graph: GraphArray, source: number): number[] => {
+export const breadthFirstSearchArray = (graph: GraphArray<number>, source: number): number[] => {
     const queue = []
     const visited: number[] = []
     queue.push(source)
@@ -118,7 +118,7 @@ export const breadthFirstSearchArray = (graph: GraphArray, source: number): numb
     return visited
 }
 
-export const seekLevelsArray = (graph: GraphArray, sourceNode: any): {[key: number]: number} => {
+export const seekLevelsArray = (graph: GraphArray<number>, sourceNode: any): {[key: number]: number} => {
     const visited: {[key: number]: boolean} = []
     const queue: number[] = []
     const levels: {[key: number]: number} = []

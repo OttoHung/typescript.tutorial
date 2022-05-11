@@ -137,7 +137,7 @@ describe("Visit each node in a graph", () => {
 
 describe("Visit each node in a graph implemented by an array", () => {
     it("Should go through nodes from top to bottom", async () => {
-        const graph: GraphArray = []
+        const graph: GraphArray<number> = []
         graph[0] = [1, 2, 3]
         graph[1] = [4, 5]
         graph[2] = [6, 7]
@@ -152,7 +152,7 @@ describe("Visit each node in a graph implemented by an array", () => {
     })
 
     it("Should list the level of nodes in a graph", async () => {
-        const graph: GraphArray = []
+        const graph: GraphArray<number> = []
         graph[0] = [1, 2]
         graph[1] = [3, 4, 5]
         graph[2] = [6]
