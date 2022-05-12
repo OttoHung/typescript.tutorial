@@ -1,4 +1,4 @@
-import { breadthFirstSearch, breadthFirstSearchArray, seekLevelsArray, seekLevels } from "../src/breadth_first_search"
+import { breadthFirstSearch, breadthFirstSearchArray, seekLevelsArray, seekLevels, zeroOneBFS } from "../src/breadth_first_search"
 import { Graph, GraphArray, GraphNode } from "../src/graph"
 
 describe("Visit each node in a graph", () => {
@@ -171,5 +171,39 @@ describe("Visit each node in a graph implemented by an array", () => {
         expect(levels[5]).toEqual(2)
         expect(levels[6]).toEqual(2)
         expect(levels[7]).toEqual(3)
+    })
+})
+
+describe("Find the shortest path", () => {
+    it("Should return the weight to each node", async () => {
+        const edges: {node: number, weight: number}[][] = new Array(5)
+        edges[0] = []
+        edges[0].push({node: 1, weight: 1,})
+        edges[0].push({node: 3, weight: 0,})
+        edges[0].push({node: 2, weight: 1,})
+
+        edges[1] = []
+        edges[1].push({node: 0, weight: 1,})
+        edges[1].push({node: 4, weight: 0,})
+
+        edges[2] = []
+        edges[2].push({node: 0, weight: 0,})
+        edges[2].push({node: 3, weight: 0,})
+
+        edges[3] = []
+        edges[3].push({node: 0, weight: 0,})
+        edges[3].push({node: 2, weight: 0,})
+        edges[3].push({node: 4, weight: 0,})
+
+        edges[4] = []
+        edges[4].push({node: 1, weight: 0,})
+        edges[4].push({node: 3, weight: 0,})
+
+        const distance = zeroOneBFS(edges, 0)
+        expect(distance[0]).toEqual(0)
+        expect(distance[1]).toEqual(1)
+        expect(distance[2]).toEqual(1)
+        expect(distance[3]).toEqual(0)
+        expect(distance[4]).toEqual(0)
     })
 })

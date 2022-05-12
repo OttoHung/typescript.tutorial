@@ -1,4 +1,4 @@
-import { Graph, GraphArray, GraphNode } from "./graph"
+import { Edge, Graph, GraphArray, GraphNode } from "./graph"
 
 const findNode = (graph: Graph, node: GraphNode): GraphNode|undefined => {
     const currentNode = graph.sourceNode
@@ -143,4 +143,29 @@ export const seekLevelsArray = (graph: GraphArray<number>, sourceNode: any): {[k
     }
 
     return levels
+}
+
+export const zeroOneBFS = (edges: Edge[][], source: number): number[] => {
+    const queue = []
+    const distance = new Array(edges.length).fill(100000, 0)    
+
+    queue.push(source)
+    distance[source] = 0
+
+    while (queue.length > 0) {
+        const vertex = queue.shift()        
+        for (let i = 0 ; i < edges[vertex].length ; i++) {
+            if (distance[edges[vertex][i].node] > distance[vertex] + edges[vertex][i].weight) {
+                distance[edges[vertex][i].node] = distance[vertex] + edges[vertex][i].weight
+
+                if (edges[vertex][i].weight === 0) {
+                    queue.splice(0, 0, edges[vertex][i].node)
+                } else {
+                    queue.push(edges[vertex][i].node)
+                }
+            }
+        }
+    }
+
+    return distance
 }

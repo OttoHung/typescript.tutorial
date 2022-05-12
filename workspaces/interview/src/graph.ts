@@ -12,6 +12,11 @@ export interface GraphArray<T> {
     [key: number]: T[]
 }
 
+export interface Edge {
+    node: number
+    weight: number
+}
+
 export interface NodeVisitStatus {
     [key: number]: boolean
 }
