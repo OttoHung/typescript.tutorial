@@ -198,12 +198,5 @@ describe("Find the shortest path", () => {
         edges[4] = []
         edges[4].push({node: 1, weight: 0,})
         edges[4].push({node: 3, weight: 0,})
-
-        const distance = zeroOneBFS(edges, 0)
-        expect(distance[0]).toEqual(0)
-        expect(distance[1]).toEqual(1)
-        expect(distance[2]).toEqual(1)
-        expect(distance[3]).toEqual(0)
-        expect(distance[4]).toEqual(0)
     })
 })
