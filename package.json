@@ -1,5 +1,5 @@
 {  
-  "author": "OttoHung",
+  "author": "OttoHung <totsi04@gmail.com>",
   "description": "This is a demo project",
   "dependencies": {
     "fs": "latest"
@@ -16,7 +16,6 @@
     "@types/node": "latest"
   },
   "license": "MIT",
-  "main": "index.js",
   "name": "demo",
   "private": true,
   "scripts": {
