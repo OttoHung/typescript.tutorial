@@ -20,30 +20,26 @@ export const insertNode = (root: TreeNode, data: number): TreeNode => {
     }
 }
 
-export const preorder = (root: TreeNode) => {
-    
+export const preorder = (root: TreeNode, predicate: (data: any) => void) => {    
     if (root) {
-        console.log(root.data)
-        preorder(root.left)
-        preorder(root.right)
+        predicate(root.data)
+        preorder(root.left, predicate)
+        preorder(root.right, predicate)
     }
 }
 
-export const inorder = (root: TreeNode) => {
+export const inorder = (root: TreeNode, predicate: (data: any) => void) => {
     if (root) {       
-        preorder(root.left)
-        console.log(root.data)
-        preorder(root.right)
+        inorder(root.left, predicate)
+        predicate(root.data)
+        inorder(root.right, predicate)
     }
 }
 
-export const postorder = (root: TreeNode): any[] => {
-    const result = []
+export const postorder = (root: TreeNode, predicate: (data: any) => void) => {
     if (root) {        
-        preorder(root.left)
-        result.push(root.data)
-        preorder(root.right)
+        postorder(root.left, predicate)
+        postorder(root.right, predicate)
+        predicate(root.data)
     }
-
-    return result
 }
