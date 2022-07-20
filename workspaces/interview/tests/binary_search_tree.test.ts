@@ -1,13 +1,13 @@
 import exp from "constants"
 import { toBalancedBST } from "../src/binary_search_tree"
 import { inorder } from "../src/tree"
-describe("To test insertion for a binary search tree", () => {
+describe.skip("To test insertion for a binary search tree", () => {
     test("Should add a list into tree", async() => {
         
     })
 })
 
-describe("To test balancing a BST", () => {
+describe.skip("To test balancing a BST", () => {
     test("Should returns 1, 2, 3, 4, 5 when traversing inorderly", async() => {
         const input = [3, 5, 1, 4, 2]
         input.sort((a, b) => (a - b))
