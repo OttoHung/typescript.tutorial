@@ -100,7 +100,7 @@ export const breadthFirstSearchArray = (graph: GraphArray<number>, source: numbe
     const queue = []
     const visited: number[] = []
     queue.push(source)
-    visited.push(0)
+    visited.push(source)
 
     while (queue.length > 0) {
         const node = queue.shift()
