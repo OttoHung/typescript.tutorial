@@ -1,0 +1,20 @@
+{
+  "author": "OttoHung",
+  "devDependencies": {
+    "copyfiles": "latest",
+    "jest": "^26.0.0",
+    "ts-jest": "^26.0.0",
+    "@types/jest": "^26.0.0"
+  },
+  "description": "Showcases of how to use fs module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "name": "fs-tutorial",
+  "scripts": {
+    "build": "tsc",
+    "linked-list": "ts-node ./src/linked_list.ts",
+    "test": "jest",
+    "test:time": "jest --verbose"
+  },
+  "version": "0.1.0"
+}
